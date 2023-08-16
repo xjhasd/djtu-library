@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="基于区块链的图书馆">
+    <meta name="keywords" content="区块链，图书馆">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>大连交通大学图书馆</title>
+    <link href="images/library.png" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app/web3.min.js"></script><!--core-->
+    <script type="text/javascript" src="app/truffle-contract.js"></script><!--core-->
+  </head>
+  <style type="text/css">
+    .lnavmenu {
+      font-size: 14px;
+      width: 300px;
+      overflow: hidden;
+      float: left;
+    }
+    .lmenu {
+        font-size: 14px;
+    }
+    .infolist1 {
+        font-size: 14px;
+        margin: 0;
+        overflow: hidden;
+        background: #f6f6f6;
+        padding: 0;
+    }
+    .title {
+        margin: 0;
+        padding: 0;
+        height: 38px;
+        line-height: 38px;
+        color: #fff;
+        font-size: 14px;
+        background: #af060d;
+    }
+    .tname{
+      font-size: 14px;
+      color: #fff;
+      padding: 0px 0px 0px;
+      line-height: 38px;
+      text-align: center;
+      font-weight: bold;
+    }
+    dd {
+      font-size: 14px;
+      margin: 0;
+      clear: both;
+      min-height: 80px;
+      padding: 5px 20px 20px;
+    }
+    .info {
+      clear: both;
+      height: auto;
+      font-size: 14px;
+      position: relative;
+      padding: 5px 0;
+      line-height: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .m{
+      font-size: 14px;
+      width: 840px;
+      overflow: hidden;
+      float: right;
+    }
+    .tom{
+      height: 38px;
+      line-height: 38px;
+      color: #1d1d1d;
+      font-size: 14px;
+      text-align: left;
+      font-weight: bold;
+      margin-top: 0px;
+      padding: 0 0 5px;
+      border-bottom: 0;
+      background: #fff;
+      position: relative;
+    }
+    .totitle{
+      font-weight: bold;
+      text-align: left;
+      line-height: 38px;
+      height: 38px;
+      color: #be1818;
+      font-size: 16px;
+      padding-left: 15px;
+    }
+    .toinfo{
+      text-align: center;
+      padding-right: 20px;
+      font-size: 14px;
+      color: #222;
+      font-weight: normal;
+      font-family: Verdana, Geneva, sans-serif;
+      position: absolute;
+      top: 0;
+      right: 0;
+      line-height: 35px;
+    }
+    .minfo{
+      font-size: 14px;
+      background-color: #FFF;
+      padding: 0px 20px;
+      border-top: 0;
+    }
+    .content{
+      font-size: 14px;
+      line-height: 160%;
+      background-color: #FFF;
+      min-height: 330px;
+      border: 0;
+      padding: 10px 0 0;
+    }
+    .content div{
+      font-size: 14px;
+      line-height: 180%;
+      margin-bottom: 10px;
+    }
+</style>
+  <body>
+    <div class="main main2">
+  
+      <div class="lnavmenu"> 
+         
+        <div class="lmenu">
+        <dl class="infolist1" id="ilist2"><dt class="title"><div class="tname"><a href="/guide">入馆指南</a></div><div class="tmore"></div></dt><dd><div class="info" id="i1"><span class="stitle"><a href="/guide/25.html" title="图书馆简介" class="red0">图书馆简介</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i2"><span class="stitle"><a href="/guide/26.html" title="开放时间" class="red0">开放时间</a></span><span class="sdate">2018-03-13</span></div><div class="info on" id="i3"><span class="stitle"><a href="/guide/27.html" title="入馆须知" class="red0">入馆须知</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i4"><span class="stitle"><a href="/guide/28.html" title="部门设置" class="red0">部门设置</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i5"><span class="stitle"><a href="/guide/29.html" title="文献布局" class="red0">文献布局</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i6"><span class="stitle"><a href="/guide/30.html" title="OPAC简介" class="red0">OPAC简介</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i7"><span class="stitle"><a href="/guide/31.html" title="借阅规则" class="red0">借阅规则</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i8"><span class="stitle"><a href="/guide/32.html" title="阅览规则" class="red0">阅览规则</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i9"><span class="stitle"><a href="/guide/33.html" title="中图法简介" class="red0">中图法简介</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i10"><span class="stitle"><a href="/guide/34.html" title="馆藏外文期刊目录" class="red0">馆藏外文期刊目录</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i11"><span class="stitle"><a href="/guide/35.html" title="电子资源使用简介" class="red0">电子资源使用简介</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i12"><span class="stitle"><a href="/guide/36.html" title="图书馆服务" class="red0">图书馆服务</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i13"><span class="stitle"><a href="/FAQ" title="常见问题（FAQ）" class="red0">常见问题（FAQ）</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i14"><span class="stitle"><a href="/guide/38.html" title="电子阅览室规则" class="red0">电子阅览室规则</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i15"><span class="stitle"><a href="/guide/39.html" title="自习区管理规定" class="red0">自习区管理规定</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i16"><span class="stitle"><a href="/guide/40.html" title="存包箱租用规定" class="red0">存包箱租用规定</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i17"><span class="stitle"><a href="/guide/41.html" title="馆舍布局" class="red0">馆舍布局</a></span><span class="sdate">2018-03-13</span></div><div class="info" id="i18"><span class="stitle"><a href="/guide/42.html" title="离校手续 " class="red0">离校手续 </a></span><span class="sdate">2018-03-13</span></div></dd></dl>
+       
+        </div>
+      </div>
+      <div class="m">
+         
+        <div class="tom"><div class="totitle"><a href="/guide">入馆须知<span></span></a></div>
+          <div class="toinfo">当前位置：<a href="/">网站首页</a> &gt; <a href="/guide">入馆指南</a></div></div>
+    
+         <div class="minfo">  
+           
+            <div class="content"><div>
+     <span style="font-size:12px;">1.校园卡（校园一卡通）是读者入馆和借阅图书、查阅资料的有效凭证，限本人使用。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">2.读者须凭本人校园卡进入图书馆。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">3.进入图书馆应注意言谈举止文明大方，着装整齐、得体，请勿穿拖鞋入馆。&nbsp;</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">4.图书馆是重点防火单位，严禁在馆内吸烟、用火；禁止携带易燃、易爆以及有腐蚀性化学物品入馆。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">5.书包等私人物品请存放于存包架上。个人证件、钱款、手机等贵重物品请勿存入，如有遗失，责任自负。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">6.请不要携带食品进入图书馆。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">7.请保持馆内清洁卫生，勿随地吐痰、乱丢垃圾。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">8.爱护公共书刊资料、设施设备，请不要随意涂抹刻划和破坏。未经许可，不得在馆内张贴或散发广告及其他宣传品。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">9.请不要用物件空占阅览座位。若座位只放物件而无人使用超过20分钟，其他读者可使用该座位。图书馆对占位物品不负保管责任。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">10.保持馆内安静，请不要大声喧哗。入馆后请将手机调至振动挡，阅览室、自习区内请不要拨打或接听手机。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">11.请读者自觉遵守本馆的各项规章制度，支持配合保安和工作人员按章办事。</span>
+   </div>
+   <div>
+     <span style="font-size:12px;">12.对违反上述规定者，工作人员有责任予以制止并进行批评，严重者将按有关规定处理。</span>
+   </div>
+   <div style="font-size:12px;">
+     <br>
+   </div></div>
+            
+         </div>
+      </div>
+   </div>
+  </body>
+</html>
